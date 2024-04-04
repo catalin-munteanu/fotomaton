@@ -5,6 +5,8 @@ const boton = document.querySelector("#tomarFoto");
 const botonEmoji = document.querySelector("#agregarEmoji");
 const canvas = document.querySelector("canvas");
 const foto = document.querySelector("#foto");
+const happyButton = document.querySelector("happyButton");
+const sadButton = document.querySelector("sadButton");
 
 const slider = document.querySelector("#tamanoEmoji");
 
@@ -20,17 +22,40 @@ let poseNet;
 let poses = [];
 
 function randomEmoji() {
-	const emojis = [
-		"😀", "😁", "🤣", "😂", "😅", "😇", "😍", "🥰", "😜", "🤔", "🤢", "🥶", "🤗", "🤫", "😑", "😴", "🥵", "🤯"
-	];
-	return emojis[Math.floor(Math.random() * emojis.length)];
+const emojis = [
+	"😀", "😁", "🤣", "😂", "😅", "😇", "😍", "🥰", "😜", "🤔", "🤢", "🥶", "🤗", "🤫", "😑", "😴", "🥵", "🤯"
+];
+return emojis[Math.floor(Math.random() * emojis.length)];
 }
+
+let selectedCategory = null;
+
+        function randomEmoji(isHappy) {
+            // Define separate arrays for "happy" and "sad" emojis
+            const happyEmojis = ["😀", "😁", "🤣", "😂", "😅", "😇", "😍", "🥰", "😜", "🤗"];
+            const sadEmojis = ["🤔", "🤢", "🥶", "🤫", "😑", "😴", "🥵", "🤯"];
+
+            // Choose the emojis array based on the provided isHappy parameter
+            const emojisArray = isHappy ? happyEmojis : sadEmojis;
+
+            // Randomly select an emoji from the chosen array
+            return emojisArray[Math.floor(Math.random() * emojisArray.length)];
+        }
+
+        // Add event listener for the "happy" button
+        document.getElementById('happyButton').addEventListener('click', function() {
+            // Set the selected category to "happy"
+            selectedCategory = true;
+        });
+
+        // Add event listener for the "sad" button
+        document.getElementById('sadButton').addEventListener('click', function() {
+            // Set the selected category to "sad"
+            selectedCategory = false;
+        });
 
 // cargó ml5
 console.log('ml5 version:', ml5.version);
-
-
-
 
 function tomarFoto() {
 	canvas.width = video.videoWidth;
@@ -63,8 +88,6 @@ function dibujarEmoji(params) {
 	if (poses.length > 0 && poses[0].skeleton.length > 0) {
 		console.log("detecto pose");	
 
-// Acá loopea (linea 64)
-
 		poses.forEach(function (pose) {
 			// console.log(pose)
 			const noseX = pose.pose.nose.x ;
@@ -72,7 +95,7 @@ function dibujarEmoji(params) {
 			context.font = `${slider.value}px Arial`;
 			context.textAlign = "center";
 			context.textBaseline = "middle"; 
-			context.fillText(randomEmoji(), noseX, noseY);
+			context.fillText(randomEmoji(selectedCategory), noseX, noseY);
 		});
     hayCara = true;
 	}
@@ -139,8 +162,6 @@ poseNet.on("pose", function(results) {
 	dibujarEmoji();
 	console.log("poses", poses);	
 });
-
-// y en el 138 tambien
 
 boton.addEventListener("click", timerFoto);
 
