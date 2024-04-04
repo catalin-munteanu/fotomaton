@@ -63,6 +63,8 @@ function dibujarEmoji(params) {
 	if (poses.length > 0 && poses[0].skeleton.length > 0) {
 		console.log("detecto pose");	
 
+// Acá loopea (linea 64)
+
 		poses.forEach(function (pose) {
 			// console.log(pose)
 			const noseX = pose.pose.nose.x ;
@@ -72,7 +74,7 @@ function dibujarEmoji(params) {
 			context.textBaseline = "middle"; 
 			context.fillText(randomEmoji(), noseX, noseY);
 		});
-    // hayCara = true;
+    hayCara = true;
 	}
 }
 
@@ -137,6 +139,8 @@ poseNet.on("pose", function(results) {
 	dibujarEmoji();
 	console.log("poses", poses);	
 });
+
+// y en el 138 tambien
 
 boton.addEventListener("click", timerFoto);
 
