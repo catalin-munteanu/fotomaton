@@ -19,7 +19,7 @@ body {
 }
 
 #countdown {
-  color: #C84B31;
+  color: #ECDBBA;
   font-size: 2em;
 }
 
@@ -56,7 +56,7 @@ button {
 }
 
 button:hover {
-  background-color: #030;
+  background-color: #2D4263;
   cursor: pointer;
 }
 

@@ -1,6 +1,6 @@
 
 const video = document.querySelector("video");
-const cuentaRegresiva = document.querySelector("#cuentaRegresiva");
+const countdown = document.querySelector("#countdown");
 const boton = document.querySelector("#tomarFoto");
 const botonEmoji = document.querySelector("#agregarEmoji");
 const canvas = document.querySelector("canvas");
@@ -75,8 +75,8 @@ function dibujarEmoji(params) {
 	}
 }
 
-function textCuentaRegresiva() {
-  cuentaRegresiva.innerHTML = cuenta > 0 ? cuenta : "";
+function textCountdown() {
+  countdown.innerHTML = cuenta > 0 ? cuenta : "";
 }
 
 function cargoModelo(m) {
@@ -112,7 +112,7 @@ navigator.mediaDevices.getUserMedia({
  const timerFoto = () => {
   cuenta = 3;
   const cuentainterval = setInterval(function() {
-    textCuentaRegresiva()
+    textCountdown()
     --cuenta;
     if (cuenta == -1) {
       console.log("chau!");
