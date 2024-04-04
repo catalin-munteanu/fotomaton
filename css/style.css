@@ -1,0 +1,164 @@
+body {
+  background-color: #191919;
+}
+
+#foto {
+  display: none;
+}
+
+.container {
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 25px;
+}
+
+.container-buttons {
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 90px;
+}
+
+#countdown {
+  color: #C84B31;
+  font-size: 2em;
+}
+
+footer {
+  padding: 20px 5px;
+  color: #ECDBBA;
+  font-size: 0.725em;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  background-color: #C84B31;
+}
+
+
+canvas,
+video {
+  display: block;
+  width: 400px;
+  height: auto;
+  border: dashed #C84B31 3px;
+  margin: 10px auto;
+}
+
+button {
+  /* background-color: #000; */
+  border: dotted #C84B31 3px;
+  color: #C84B31;
+  padding: 5px;
+  text-transform: uppercase;
+  margin: 0 10px;
+  font-size: 4em;
+  width: 120px;
+}
+
+button:hover {
+  background-color: #030;
+  cursor: pointer;
+}
+
+input[type=range] {
+  width: 200px;
+  display: block;
+  -webkit-appearance: none;
+  margin: auto;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #434343;
+  background: #ECDBBA;
+  border-radius: 0px;
+  border: 0px solid #434343;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #434343;
+  border: 0px solid #434343;
+  height: 15px;
+  width: 15px;
+  border-radius: 14px;
+  background: #ECDBBA;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -6.5px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #C84B31;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #434343;
+  background: #C84B31;
+  border-radius: 0px;
+  border: 0px solid #434343;
+}
+
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #434343;
+  border: 0px solid #434343;
+  height: 15px;
+  width: 15px;
+  border-radius: 14px;
+  background: #C84B31;
+  cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #C84B31;
+  border: 0px solid #434343;
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px #434343;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #C84B31;
+  border: 0px solid #434343;
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px #434343;
+}
+
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px #434343;
+  border: 0px solid #434343;
+  height: 15px;
+  width: 15px;
+  border-radius: 14px;
+  background: #C84B31;
+  cursor: pointer;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #C84B31;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #C84B31;
+}
+
+label[for=tamanoEmoji] {
+  display: none;
+}
