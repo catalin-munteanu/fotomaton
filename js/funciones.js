@@ -48,7 +48,8 @@ function tomarFoto() {
       return;
     }
     if (poseNet) {
-      poseNet.singlePose(foto);
+      // poseNet.singlePose(foto);
+      poseNet.multiPose(foto);
       // debugger;
       // poseNet.multiPose(foto); 
     }
